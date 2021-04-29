@@ -1,0 +1,74 @@
+{% extends "../../layouts/default.twig" %}
+{% set pageTitle = "Components" %}
+{% set cssDefault = "../css/default.css" %}
+{% set cssIcebox = "../css/app-icebox.css" %}
+
+
+{% block content %}
+
+<div class="ds mt-4 container">
+  <div class="ds-block">
+    <h4 class="ds-block__header">
+      Typography
+    </h4>
+    <div class="ds-block__body">
+      <h1>Heading One</h1>
+      <h2>Heading Two</h2>
+      <h3>Heading Three</h3>
+      <h4>Heading Four</h4>
+      <h5>Heading Five</h5>
+      <p class="bigger">Body Bigger</p>
+      <p class="meta">Meta for buttons & navbar</p>
+      <p class="micro">Micro smaller text</p>
+      <p class="regular">Regular-400</p>
+      <p class="medium">Medium-500</p>
+      <p class="bold">bold-600</p>
+    </div>
+  </div>
+  <div class="ds-block">
+    <h4 class="ds-block__header">Colors</h4>
+    <div class="ds-block__body ib-flex flex-wrap">
+      <span class="col-12"
+        style="height: 100px; margin-bottom: 8px; display: block; background: var(--color-brand);"></span>
+      <span class="col-3"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-black);"></span>
+      <span class="col-3"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-white); border: 1px solid #eaeaea"></span>
+      <span class="col-3"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-gold);"></span>
+      <span class="col-3"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-blue);"></span>
+      <span class="col-4"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-accent-green);"></span>
+      <span class="col-4"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-accent-yellow);"></span>
+      <span class="col-4"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-accent-red);"></span>
+      <span class="col-2"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-brand);"></span>
+      <span class="col-2"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-brand-400);"></span>
+      <span class="col-2"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-brand-300);"></span>
+      <span class="col-2"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-brand-200);"></span>
+      <span class="col-2"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-brand-100);"></span>
+      <span class="col-2"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-brand-50);"></span>
+      <span class="col-3"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-black-400);"></span>
+      <span class="col-3"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-black-300);"></span>
+      <span class="col-3"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-black-200);"></span>
+      <span class="col-3"
+        style="height: 60px; margin-bottom: 8px; display: block; background: var(--color-black-100);"></span>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block included_content %}
+{% endblock %}

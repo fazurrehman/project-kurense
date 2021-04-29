@@ -1,0 +1,70 @@
+.siteHeader
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: space-between
+  @include z-index(navigation)
+  &__container
+    @extend .container
+    @extend .grid
+    display: flex
+    justify-content: space-between
+    align-items: center
+    min-height: 56px
+    padding-top: 32px
+    padding-bottom: 24px
+  &.variant--Overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    background: none
+
+.SiteHeader__logo
+  display: block
+  position: relative
+  width: 160px
+  svg
+    width: 160px
+    height: 40px
+
+
+.siteHeader__menu
+  position: relative
+  display: inline-flex
+  align-items: center
+
+.siteHeaderNav
+  &__list
+    display: inline-flex
+    align-items: center
+    margin: 0
+    padding: 0
+    list-style: none
+
+.siteHeader__ctaNav
+  margin-left: 16px
+  .btn
+    min-height: 44px
+    padding-top: 12px
+    padding-bottom: 12px
+
+
+// classes
+.siteHeaderNavItem
+  --linkColor: var(--color-black)
+  --linkHoverColor: var(--color-brand)
+  --linkFontFamily: var(--meta)
+  font-size: 15px
+  font-family: var(--linkFontFamily)
+  font-weight: var(--font-medium)
+  display: inline-block
+  color: var(--linkColor)
+  padding: 10px 12px
+  cursor: pointer
+  letter-spacing: 0.2px
+  transition: var(--hoverTransition)
+  &:hover
+    color: var(--linkHoverColor)
+
+

@@ -1,0 +1,32 @@
+:root {
+  // colors
+  --color-brand: #0253ac;
+  --color-secondary: #8bb658;
+  --color-aqua: #cdeefe;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-grey: #dde2e6;
+  --color-grey-light: #f3f5f6;
+  --color-btn-hover: #297ad3;
+
+  --color-accent-green: #00da81;
+  --color-accent-yellow: #ffb900;
+  --color-accent-red: #ff3512;
+
+  // brand colors
+  --color-btn: var(--color-brand);
+  --color-border: #c3c3cb;
+  --color-bg: var(--color-grey);
+  --color-bg2: var(--color-grey-light);
+
+  // typography
+  --heading: "PlusJakartaSans", "Helvetica Neue", Arial, Sans-Serif;
+  --body: "PlusJakartaSans", "Helvetica Neue", Arial, Sans-Serif;
+  --meta: "PlusJakartaSans", "Helvetica Neue", Arial, Sans-Serif;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-bold: 600;
+  --font-extrabold: 700;
+
+  --hoverTransition: 150ms all ease-in-out;
+}

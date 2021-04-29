@@ -1,0 +1,60 @@
+{% extends "../../layouts/default.twig" %}
+{% set pageClass = "homepage" %}
+{% set pageTitle = "Icon Experiment" %}
+
+
+{% block content %}
+
+<style>
+  .svgIcon-root {
+    fill: currentColor;
+    /* width: 1em;
+  height: 1em; */
+    display: inline-block;
+    font-size: 18px;
+    flex-shrink: 0;
+    user-select: none;
+  }
+
+  .--facebook {
+    color: #3b5998;
+  }
+
+  .--groupme {
+    color: #00adee;
+  }
+
+  .--instagram {
+    color: #f56040;
+  }
+
+  .--twitter {
+    color: #1da1f2;
+  }
+
+  .--youtube {
+    color: #ff0000;
+  }
+</style>
+
+<svg class="svgIcon-root --facebook">
+  <use xlink:href="../icons.svg#icon-facebook" />
+</svg>
+<svg class="svgIcon-root --groupme">
+  <use xlink:href="../icons.svg#icon-groupme" />
+</svg>
+<svg class="svgIcon-root --instagram">
+  <use xlink:href="../icons.svg#icon-instagram" />
+</svg>
+<svg class="svgIcon-root --twitter">
+  <use xlink:href="../icons.svg#icon-twitter" />
+</svg>
+<svg class="svgIcon-root --youtube">
+  <use xlink:href="../icons.svg#icon-youtube" />
+</svg>
+
+
+{% endblock %}
+
+{% block included_content %}
+{% endblock %}

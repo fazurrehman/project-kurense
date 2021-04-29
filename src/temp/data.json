@@ -1,0 +1,20 @@
+{
+	"navbar": [
+		{
+			"title": "Work",
+			"slug": "work.html"
+		},
+		{
+			"title": "Shop",
+			"slug": "store.html"
+		},
+		{
+			"title": "About",
+			"slug": "about.html"
+		},
+		{
+			"title": "Masterclass",
+			"slug": "masterclass.html"
+		}
+	]
+}

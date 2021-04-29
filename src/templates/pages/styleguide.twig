@@ -1,0 +1,42 @@
+{% extends "../layouts/default.twig" %}
+{% set pageClass = "page-homepage" %}
+{% set pageTitle = "Kurense" %}
+
+
+
+{% block content %}
+  <div class="container grid">
+    <h1>Heading one</h1>
+    <h2>Heading two</h2>
+    <h3>Heading three</h3>
+    <h4>Heading four</h4>
+    <h5>Heading five</h5>
+    <p class="bigger">Body Bigger</p>
+    <p>Body</p>
+    <p class="medium">Body Medium</p>
+    <span class="meta">Meta & Buttons & Navbar </span> <br>
+    <span class="meta bold">Meta & Buttons & Navbar </span><br>
+    <span class="micro">Micro </span>
+
+    <br><br>
+    <button class="btn btn--primary">Btn Primary</button>
+    <button class="btn btn--border">Btn Border</button>
+    <button class="btn btn--border k-btn--has-icon">
+      Request a demo
+      <svg class="svgIcon-root icon-right">
+        <use xlink:href="icons/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <button class="btn btn--has-icon btn--border-blue">
+      Request a demo
+      <svg class="svgIcon-root icon-right">
+        <use xlink:href="icons/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+  </div>
+
+{% endblock %}
+
+{% block included_content %}
+  <script src="js/global.min.js"></script>
+{% endblock %}

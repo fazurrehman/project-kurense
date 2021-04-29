@@ -1,0 +1,38 @@
+{% extends "../layouts/default.twig" %}
+{% set pageClass = "page-index" %}
+{% set mainClass = "index" %}
+{% set pageTitle = "Kurense" %}
+
+
+
+{% block content %}
+  <section class="homeHero">
+    <div class="container grid ">
+      <div class="homeHero__content">
+        <h1 class="headline h1">Empowering Commerce.</h1>
+        <p class="subhead h5 regular">We empower businesses with technology-enabled payment solutions for your employees, vendors, and customers.</p>
+        <button class="btn btn--btnCTA btn--has-icon btn--primary">
+          Read more
+          <svg class="svgIcon-root icon-right">
+            <use xlink:href="icons/icons.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="heroIllustration" style="background-image: url('../public/images/hero-illustration.png') "></div>
+  </section>
+
+
+
+  <section class="clients">hero section</section>
+  <section class="product">Payroll Card</section>
+  <section class="product">Campus Card</section>
+  <section class="product">Pay On-demand</section>
+  <section class="features">features</section>
+  <section class="product">Merchant Services</section>
+  <section class="industries">Financial Technology</section>
+  <section class="cta">Financial Technology</section>
+{% endblock %}
+{% block included_content %}
+<script src="js/global.min.js"></script>
+{% endblock %}
