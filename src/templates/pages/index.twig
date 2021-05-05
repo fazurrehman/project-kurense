@@ -19,7 +19,10 @@
         </button>
       </div>
     </div>
-    <div class="heroIllustration" style="background-image: url('../public/images/hero-illustration.png') "></div>
+    <div class="homeHero-illustration">
+      <img class="homeHero-illustration__vector" src="public/images/home-illustration.svg" alt="">
+      <div class="homeHero-illustration__shadow illustration-block"></div>
+    </div>
   </section>
 
 
@@ -35,4 +38,38 @@
 {% endblock %}
 {% block included_content %}
 <script src="js/global.min.js"></script>
+  <script>
+    (function($) {
+      "use strict";
+
+      //mobile - open lateral menu clicking on the menu icon
+      $(".js-mobileHamburgerToggle .menuToggle").on("click", function(event) {
+        event.preventDefault();
+        $(this).toggleClass("is-active");
+      });
+
+      $(function() {
+        var header = $(".globalNav");
+        $(window).scroll(function() {
+          var scroll = $(window).scrollTop();
+          if (scroll >= 10) {
+            header.addClass("is-fixed");
+          } else {
+            header.removeClass("is-fixed");
+          }
+        });
+      });
+
+      //Menu On Hover
+      $("body").on("mouseenter mouseleave", ".js-hasSubmenu", function(e) {
+        if ($(window).width() > 750) {
+          var _d = $(e.target).closest(".js-hasSubmenu");
+          _d.addClass("show");
+          setTimeout(function() {
+            _d[_d.is(":hover") ? "addClass" : "removeClass"]("show");
+          }, 1);
+        }
+      });
+    })(jQuery);
+  </script>
 {% endblock %}

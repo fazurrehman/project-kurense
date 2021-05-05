@@ -11,8 +11,11 @@
     justify-content: space-between
     align-items: center
     min-height: 56px
-    padding-top: 32px
-    padding-bottom: 24px
+    padding-top: 16px
+    padding-bottom: 16px
+    @include media('>tablet')
+      padding-top: 32px
+      padding-bottom: 24px
   &.variant--Overlay
     position: absolute
     top: 0
@@ -23,10 +26,16 @@
 .SiteHeader__logo
   display: block
   position: relative
-  width: 160px
+  --logoDesktop: 160px
+  --logoMobile: 132px
+  width: var(--logoMobile)
+  @include media('>tablet')
+    width: var(--logoDesktop)
   svg
-    width: 160px
+    width: var(--logoMobile)
     height: 40px
+    @include media('>tablet')
+      width: var(--logoDesktop)
 
 
 .siteHeader__menu
@@ -35,6 +44,9 @@
   align-items: center
 
 .siteHeaderNav
+  display: none
+  @include media('>tablet')
+    display: block
   &__list
     display: inline-flex
     align-items: center
@@ -44,14 +56,109 @@
 
 .siteHeader__ctaNav
   margin-left: 16px
+  display: none
+  @include media('>tablet')
+    display: block
   .btn
     min-height: 44px
-    padding-top: 12px
-    padding-bottom: 12px
+    padding: 12px 24px
+
+
+
+// Submenu
+.siteHeaderNavItem-hasSubmenu
+  position: relative
+  padding-right: 24px!important
+  &:after
+    border-left: 6px solid transparent
+    border-right: 6px solid transparent
+    border-top: 6px solid black
+    top: 45%
+    right: 6px
+    width: 0
+    height: 0
+    position: absolute
+    content: ''
+
+  &.show
+    &:after
+      transform: rotate(180deg)
+
+  .dropdownMenu
+    --siteDropdownSpacing: 32px
+    --siteDropdownRotateX: -15deg
+    --siteDropdownTransition: 250ms
+    --siteDropdownHover: cubic-bezier(0.215,0.61,0.355,1)
+    position: absolute
+    top: 40px
+    background: #FFFFFF
+    display: block
+    padding: var(--siteDropdownSpacing)
+    margin: 0
+    @include z-index(navigation)
+    pointer-events: none
+    visibility: hidden
+    max-height: 0
+    opacity: 0
+    border-radius: 12px
+    box-shadow: 0 50px 100px -20px rgba(50,50,93,0.25)
+    transform: rotateX(var(--siteDropdownRotateX))
+    transform-origin: 50% -50px
+    will-change: transform, opacity
+    transition-property: transform, opacity
+    transition-duration: var(--siteDropdownTransition)
+    transition-timing-function: var(--siteDropdownHover)
+
+
+  &.show .dropdownMenu
+    opacity: 1
+    visibility: visible
+    max-height: 999px
+    pointer-events: all
+    transform: none
+
+.dropdownMenu-item
+  margin-top: 28px
+  cursor: pointer
+  &:first-child
+    margin-top: 0
+
+.dropdownMenu-link
+  display: inline-flex!important
+  position: relative
+  padding: 0!important
+  align-items: center
+  &__icon
+    --siteNavIconSize: 32px
+    --siteNavIconSpace: 16px
+    width: var(--siteNavIconSize)
+    height: var(--siteNavIconSize)
+    margin-right: var(--siteNavIconSpace)
+    flex: 0 0 auto
+    svg
+      width: inherit
+      height: inherit
+
+  &__container
+    white-space: nowrap
+
+  .dropdownMenu-body
+    font-size: 0.9375rem
+    font-weight: var(--font-bold)
+    margin-bottom: 4px
+    display: block
+
+  .dropdownMenu-label
+    font-size: 0.813rem
+    opacity: 0.6
+    margin-bottom: 0
+    letter-spacing: 0
+
 
 
 // classes
-.siteHeaderNavItem
+.siteHeaderNavItem,
+.dropdownMenu-link
   --linkColor: var(--color-black)
   --linkHoverColor: var(--color-brand)
   --linkFontFamily: var(--meta)
@@ -66,5 +173,81 @@
   transition: var(--hoverTransition)
   &:hover
     color: var(--linkHoverColor)
+
+
+// menu
+.mobileHamburger
+  position: absolute
+  right: -10px
+  top: -36px
+  @include z-index(navigation)
+  border: 0
+  padding:  .75rem
+  font-size: 1.25rem
+  line-height: 1
+  margin-right: -10px
+  border: 1px solid transparent
+  @include media('>tablet')
+    display: none
+  &__menu
+    position: relative
+    display: block
+    width: 44px
+    height: 44px
+    overflow: hidden
+    white-space: nowrap
+    color: transparent
+    span,
+    span::before,
+    span::after
+      position: absolute
+      display: inline-block
+      height: 3px
+      width: 24px
+      background: #000000
+    span
+      position: absolute
+      top: 50%
+      right: 10px
+      margin-top: -2px
+      transition: background 0.3s
+    span::before,
+    span::after
+      content: ''
+      right: 0
+      transform: translateZ(0)
+      -webkit-backface-visibility: hidden
+      backface-visibility: hidden
+      transform-origin: 0% 50%
+      transition: transform 0.2s
+    span::before
+      top: -6px
+    span::after
+      top: 6px
+
+    &.is-active
+      span
+        background: rgba($primary, 0)
+
+      span::before,
+      span::after
+        background: rgba($primary, 1)
+
+      span::before
+        transform: translateX(4px) translateY(-3px) rotate(45deg)
+      span::after
+        transform: translateX(4px) translateY(2px) rotate(-45deg)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
